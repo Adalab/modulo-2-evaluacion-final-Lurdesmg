@@ -28,10 +28,24 @@ function handleSubmit(ev) {
         name: cocktail.strDrink,
         image: cocktail.strDrinkThumb,
       }));
-     console.log(listCocktailsData)
+        renderListCocktails(listCocktailsData);
     });
 }
 
+function renderListCocktails(listCocktailsData) {
+    console.log(listCocktailsData);
+        for (const cocktail of listCocktailsData) {
+            listElement.innerHTML += renderCocktail(cocktail);
+        }
+    }
+    
+    function renderCocktail(cocktail) {
+        const html = `<li>
+        <img src="${cocktail.image}" alt="${cocktail.name}">
+        <h3>${cocktail.name}</h3>
+        </li>`;
+        return html;
+    }
 
 
 // Eventos
