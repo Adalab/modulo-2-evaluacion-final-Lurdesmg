@@ -57,9 +57,9 @@ function renderListCocktails(listCocktailsData) {
 // Función donde estamos pintado la estructura del html para cada cocktail
 function renderCocktail(cocktail) {
     const html = `<li>
-    <article class="js-li-cocktail" id=${cocktail.id}>
-    <img src="${cocktail.image}" alt="${cocktail.name}">
-    <h3>${cocktail.name}</h3>
+    <article class="js-li-cocktail list_item" id=${cocktail.id}>
+    <img class="list_item-img" src="${cocktail.image}" alt="${cocktail.name}">
+    <h3 class="list_item-name">${cocktail.name}</h3>
     </article>
     </li>`;
     return html;
