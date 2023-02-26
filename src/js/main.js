@@ -138,6 +138,11 @@ function addEventToCocktail() {
     }
 }
 
+function handleReset(ev) {
+    inputSearch.value = '';
+    listCocktail.innerHTML = '';
+}
 
 // Evento btn buscar
 btnSubmit.addEventListener('click' , handleSubmit);
+btnReset.addEventListener('click' , handleReset);
