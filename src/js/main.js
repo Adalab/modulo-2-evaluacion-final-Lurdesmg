@@ -72,8 +72,19 @@ function renderFavouriteList(listFavouritesData) {
     favList.innerHTML = '';
     // Pinta la lista de los favoritos!!
     for (const cocktail of listFavouritesData) {
-        favList.innerHTML += renderCocktail(cocktail);
+        favList.innerHTML += renderFavouritCocktail(cocktail);
     }
+}
+
+function renderFavouritCocktail(cocktail) {
+    const html = `<li>
+    <article class="js-li-cocktail list_itemFav" id=${cocktail.id}>
+    <img class="list_itemFav-img" src="${cocktail.image}" alt="${cocktail.name}">
+    <h3 class="list_itemFav-name">${cocktail.name}</h3>
+    <span class="js-removeCocktel xmark"><i class="fa-solid fa-circle-xmark"></i></span>
+    </article>
+    </li>`;
+    return html;
 }
 
 function handleClick(ev) {

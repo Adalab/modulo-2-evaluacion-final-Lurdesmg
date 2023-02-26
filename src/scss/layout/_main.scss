@@ -21,8 +21,8 @@
 
         &-ul {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-direction: column;
+            //flex-wrap: wrap;
             justify-content: space-evenly;
         }
     }
@@ -55,7 +55,7 @@
     margin: 1rem 0;
     width: 15rem;
     height: 15rem;
- 
+     
     &-img {
         max-width: 80%;
         padding-top: 0.8rem;
@@ -65,6 +65,30 @@
         font-size: 1.5rem;
         font-family: $font-elements;
     }
+}
+  
+.list_itemFav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+    
+    &-img {
+        max-width: 80%;
+        padding-top: 0.8rem;
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &-name {
+        font-size: 1.5rem;
+        font-family: $font-elements;
+        }
+}
+.xmark {
+    font-size: 2rem;
+    color: $color-list;
 }
 
 .selected {
