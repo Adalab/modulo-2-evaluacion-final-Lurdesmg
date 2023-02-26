@@ -67,6 +67,7 @@ function renderCocktail(cocktail) {
     return html;
 }
 
+// funcion para pintar la lista de fav y poder hacerle el ev para X
 function renderFavouriteList(listFavouritesData) {
     // Vaciamos la ul para que no nos duplique los cockteles cada vez que añadamos uno!
     favList.innerHTML = '';
@@ -74,18 +75,21 @@ function renderFavouriteList(listFavouritesData) {
     for (const cocktail of listFavouritesData) {
         favList.innerHTML += renderFavouritCocktail(cocktail);
     }
+    removeEventCocktail();
 }
 
+// funcion para pintar los elementos en favoritos y poder hacer el evento sobre el span, donde le ponemos el id, ya que nos venia null y daba error ya que en esta donde estamos haciendo el evento es sobre la X!!
 function renderFavouritCocktail(cocktail) {
     const html = `<li>
     <article class="js-li-cocktail list_itemFav" id=${cocktail.id}>
     <img class="list_itemFav-img" src="${cocktail.image}" alt="${cocktail.name}">
     <h3 class="list_itemFav-name">${cocktail.name}</h3>
-    <span class="js-removeCocktel xmark"><i class="fa-solid fa-circle-xmark"></i></span>
+    <span class="js-removeCocktel xmark" id=${cocktail.id}><i class="fa-solid fa-circle-xmark"></i></span>
     </article>
     </li>`;
     return html;
 }
+
 
 function handleClick(ev) {
     // Evento para llamar la clase selected (cambia e l color en la lista si este se encuentra en favoritos!!)
@@ -116,6 +120,15 @@ function getFavouriteData() {
         renderFavouriteList(listFavouritesData);
     }
 }
+
+function removeEventCocktail() {
+    // funcion para poder hacer el evento en la lista que se nos pinta
+    const liElementList = document.querySelectorAll('.js-removeCocktel');
+    for (const li of liElementList) {
+        li.addEventListener('click', handleClick);
+    }
+}
+
 
 function addEventToCocktail() {
     // funcion para poder hacer el evento en la lista que se nos pinta
