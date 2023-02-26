@@ -1,2 +1,12 @@
 .footer {
+    background-color: lightslategrey;
+    position: fixed;
+    width: 100%;
+    
+    &_copy {
+        font-size: 1.5rem;
+        font-family: $font-elements;
+        text-align: center;
+        padding: 0.5rem;
+    }
 }
