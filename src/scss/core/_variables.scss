@@ -6,10 +6,23 @@ $defaultFontSize: 16;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
+:root {
+    font-size: 62.5%;
+    text-decoration: none;
+}
+
 // fonts
 // $font-main: 'Roboto', sans-serif;
+$font-header: 'Rampart One', cursive;
+$font-elements: 'Acme', sans-serif;
 
 // colors
 // $color-text: #000;
 // $color-title: #000;
 // $color-background: #999;
+
+// $color-header: ;
+// $color-listFav: ;
+// $color-list: ;
+
+
