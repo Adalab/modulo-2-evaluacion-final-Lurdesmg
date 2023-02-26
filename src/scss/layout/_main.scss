@@ -1,12 +1,12 @@
 .main {
-    background-color: lightgray;
+    background-color: $color-background;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
     &__listFav {
-        width: 30%;
-        border: .2rem solid yellow;
+        width: 35%;
+        border: .5rem solid $color-list;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -14,25 +14,30 @@
         &-title {
             font-size: 2rem;
             font-family: $font-elements;
-            padding: 0.5rem 0;
+            background-color: $color-title;
+            border-bottom: 0.5rem solid $color-list;
+            padding: 1.5rem 0;
         }
 
         &-ul {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-evenly;
         }
     }
 
     &__list {
         width: 60%;
-        border: 0.2rem solid purple;
+        border: 0.5rem solid $color-list;
         text-align: center;
         
         &-title {
             font-size: 2rem;
             font-family: $font-elements;
-            padding: 0.5rem 0;
+            background-color: $color-title;
+            border-bottom: 0.5rem solid $color-list;
+            padding: 1.5rem 0;
         }
 
         &-ul {
@@ -47,15 +52,23 @@
 }
 
 .list_item {
+    margin: 1rem 0;
     width: 15rem;
     height: 15rem;
-
+ 
     &-img {
-        max-width: 90%;
+        max-width: 80%;
+        padding-top: 0.8rem;
     }
 
     &-name {
         font-size: 1.5rem;
         font-family: $font-elements;
     }
+}
+
+.selected {
+    border: .5rem solid lightseagreen;
+    border-radius: 1.5rem;
+    color: palevioletred;
 }

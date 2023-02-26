@@ -1,5 +1,5 @@
 .footer {
-    background-color: lightslategrey;
+    background-color: $color-background;
     position: fixed;
     width: 100%;
     
@@ -7,6 +7,6 @@
         font-size: 1.5rem;
         font-family: $font-elements;
         text-align: center;
-        padding: 0.5rem;
+        padding: 1.5rem;
     }
 }
