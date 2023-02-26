@@ -16,6 +16,8 @@ const emptyImage = 'https://via.placeholder.com/210x295/ffffff/666666/?text=No-I
 let listCocktailsData = [];
 let listFavouritesData = [];
 
+//! Llamada del localStorage (con sus datos guardados SI los hay!)
+getFavouriteData();
 
 // Función de evento click en el btn buscar, donde nos trae los datos del servidor
 function handleSubmit(ev) {
@@ -75,20 +77,37 @@ function renderFavouriteList(listFavouritesData) {
 }
 
 function handleClick(ev) {
-
+    // Evento para llamar la clase selected (cambia e l color en la lista si este se encuentra en favoritos!!)
+    ev.currentTarget.classList.toggle('selected');
+    // busca el id del cocktail seleccionado
     const idSelected = ev.currentTarget.id;
+    // devuelve el primer elemento que cumpla la condicion
     const selectedCocktail = listCocktailsData.find(cocktail => cocktail.id === idSelected);
+    // buscamos con el findIndex la posicion que se encuentra o no (-1)
     const indexCocktail = listFavouritesData.findIndex(cocktail => cocktail.id === idSelected);
-
+    // comprobamos si ya existe en favoritos!!
     if (indexCocktail === -1) {
         listFavouritesData.push(selectedCocktail);
     } else {
         listFavouritesData.splice(indexCocktail, 1);
     }
+    //! LLamar a la funcion de guardar en el localStorage y mandar listFavouritesData
+    localStorage.setItem('favouriteCocktails', JSON.stringify(listFavouritesData));
+    // llamada de la funcion para pintar la lista de favoritos
     renderFavouriteList(listFavouritesData);
 }
 
+// Almacenar favoritos en el localStorage!
+function getFavouriteData() {
+    const cocktailStorage = JSON.parse(localStorage.getItem('favouriteCocktails'));
+    if (cocktailStorage) {
+        listFavouritesData = cocktailStorage;
+        renderFavouriteList(listFavouritesData);
+    }
+}
+
 function addEventToCocktail() {
+    // funcion para poder hacer el evento en la lista que se nos pinta
     const liElementList = document.querySelectorAll('.js-li-cocktail');
     for (const li of liElementList) {
         li.addEventListener('click', handleClick);
