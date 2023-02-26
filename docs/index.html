@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evaluación final - Módulo 2 LourdesMG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Rampart+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="icon" href="./assets/images/favicon.png" />
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__title">Buscador de Cócteles</h1>
+     <form class="header__form">
+      <input class="js-search header__form-placeholder" type="text" name="search" placeholder="busca tu cócktel" id="search">
+      <input class="js-submit header__form-btn" type="submit" value="Buscar">
+      <input class="js-reset header__form-btn" type="reset" value="Reset">
+    </form>
+  </header>
+
+  <main class="main">
+    <section class="main__listFav">
+      <h2 class="main__listFav-title">Cócteles Favoritos</h2>
+      <ul class="js-favourites main__listFav-ul">
+
+      </ul>
+    </section>
+    <section class="main__list">
+      <h2 class="main__list-title">Lista</h2>
+      <ul class="js-list main__list-ul">
+        
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer_copy">&copy;Todos los derechos reservados - Lourdes MG 2023</p>
+  </footer>
+  
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
