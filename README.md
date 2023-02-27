@@ -11,8 +11,20 @@ En este 2º modulo hemos creado una app de cockteles con interacción.
 6. Si le damos al boton reset, se nos limpiará el campo de buscar y la lista buscada, pero no la de favoritos.
 7. El diseño de la pagina se va adaptando al listado de cockteles que le metamos.
 
+## Como he estructurado el proyecto:
+He ido creando diferentes ramas en las que ir trabajando (cierto que el JS lo tengo en un mismo fichero, pero ahora mismo necesito verlo en la misma!!)
+1. main (donde se subirá todo el proyecto final)
+2. develop (de donde he ido sacando las ramas para poder ir trabajando)
+3. search-cocktails:
+   donde he comenzado todo el proyecto desde la esctructura basica del html y la primera parte del JS donde tarernos los datos y que se nos pintara en la lista.
+4. favourite-list:
+   añadir los cockteles a la lista de favoritos y que se nos almacenen en el localStorage
+5. Styles:
+   todo el css de la web
+6. Bonus.
 
-## Como he estructurado el html:
+
+## Estructura del HTML:
 El HTML lo he dividido en tres secciones, como ya conocemos:
 1. Head
 2. Main
