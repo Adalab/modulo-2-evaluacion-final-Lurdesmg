@@ -8,6 +8,7 @@ const btnSubmit = document.querySelector('.js-submit');
 const btnReset = document.querySelector('.js-reset');
 const listCocktail = document.querySelector('.js-list');
 const favList = document.querySelector('.js-favourites');
+const newbtn = document.querySelector('.js-newbtn');
 
 // Variables creadas en JS
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -26,10 +27,15 @@ function handleSubmit(ev) {
     fetch(`${url}${inputValue}`)
     .then(response => response.json())
     .then(data => {
+        console.log(data);
       listCocktailsData = data.drinks.map((cocktail) =>({
         id: cocktail.idDrink,
         name: cocktail.strDrink,
         image: checkImage(cocktail.strDrinkThumb),
+        ing1: cocktail.strIngredient1,
+        ing2: cocktail.strIngredient2,
+        ing3: cocktail.strIngredient3,
+
       }));
       // Llamada de la funcion para que pinte los datos al html
         renderListCocktails(listCocktailsData);
@@ -62,6 +68,9 @@ function renderCocktail(cocktail) {
     <article class="js-li-cocktail list_item" id=${cocktail.id}>
     <img class="list_item-img" src="${cocktail.image}" alt="${cocktail.name}">
     <h3 class="list_item-name">${cocktail.name}</h3>
+    <p>${cocktail.ing1}</p>
+    <p>${cocktail.ing2}</p>
+    <p>${cocktail.ing3}</p>
     </article>
     </li>`;
     return html;
@@ -143,6 +152,13 @@ function handleReset(ev) {
     listCocktail.innerHTML = '';
 }
 
+function handleLog(ev) {
+    ev.preventDefault();
+    console.log(`tienes ${listFavouritesData.length} favoritos`);
+
+}
+
 // Evento btn buscar
 btnSubmit.addEventListener('click' , handleSubmit);
 btnReset.addEventListener('click' , handleReset);
+newbtn.addEventListener('click' , handleLog);
